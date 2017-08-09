@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+# By Nissim Bitan (niso120b@gmail.com)
+java -jar /usr/bin/calclib/calc.jar

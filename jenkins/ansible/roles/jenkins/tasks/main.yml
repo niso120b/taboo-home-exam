@@ -1,0 +1,24 @@
+---
+
+- name: "Ensure Jenkins repo is installed"
+  get_url:
+    url: "{{ jenkins_repo_url }}"
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: "Add Jenkins repo GPG key"
+  rpm_key:
+    state: present
+    key: "{{ jenkins_repo_key_url }}"
+
+- name: "Install jenkins on server"
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - jenkins
+
+- name: "Start and enable jenkins service also to boot"
+  service:
+    name: jenkins
+    state: started
+    enabled: yes
