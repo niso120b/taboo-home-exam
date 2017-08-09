@@ -12,3 +12,7 @@ this solution contains:
   * Working with maven and pom.xml
   * Ansible roles to configure the jenkins server
 * Python
+
+## Contact
+
+Nissim Bitan - niso120b@gmail.com
